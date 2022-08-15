@@ -7,4 +7,7 @@
 
 #### Ill complete this project using Spring, JAVA, RESTful API, MySQL DB, and React front end app. Henrick-3 unofficial valorant API will be used to pull data from the official Riot API database in JSON format. This will be parsed and stored as Strings in MySQL database to be used in the front end.
 
-#### This project has the potential to scale up and take more users once official Valorant API is approved.![image](https://user-images.githubusercontent.com/96934316/184690429-28d069ab-b6fa-4b43-ab74-a4cacb0510fd.png)
+#### This project has the potential to scale up and take more users once official Valorant API is approved.
+
+
+![image](https://user-images.githubusercontent.com/96934316/184690429-28d069ab-b6fa-4b43-ab74-a4cacb0510fd.png)
