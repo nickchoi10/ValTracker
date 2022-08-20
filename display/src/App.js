@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {Lineups} from "./pages/Lineups"
+import {VNavbar} from './components/navbar/VNavbar'
+import {Homepage} from './pages/HomePage'
+import CrossHairs from "./pages/CrossHairs"
+import RecentMatches from './pages/RecentMatches'
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <VNavbar/>
+      <Routes>
+        <Route path='/' exact element={<Homepage/>}/>
+        <Route path='/recent_matches' exact element={<RecentMatches/>}/>
+        <Route path='/lineups' exact element={<Lineups/>}/>
+        <Route path='/crosshairs' exact element={<CrossHairs/>}/>
+      </Routes>
+    </Router>
   );
 }
-
+ 
 export default App;
