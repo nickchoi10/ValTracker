@@ -2,7 +2,7 @@ import {Card} from 'react-bootstrap';
 import { useState } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import HenrikDevValorantAPI from 'unofficial-valorant-api';
-import './css/homepage.css'
+
 
 
 //API key
@@ -14,8 +14,8 @@ const VAPI = new HenrikDevValorantAPI(APIKey);
 // Homepage and Recent Matches are the same site at the moment
 
 const cardTitle = {
-    color: "cyan",
-    fontSize: "32px",
+    color: "blue",
+    fontSize: "90px",
 }
 
 const cardTitle2 = {
@@ -64,11 +64,10 @@ export const Homepage = () => {
     return(
     <><div>
             <Card className="bg-dark text-white">
-                <Card.Img style={{ height: 300, }} src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta2b1167957d775df/629003b1d31030576a34bbcb/map1920x1080.jpg?auto=webp&disable=upscale&height=549" alt="Card image" />
                 <Card.ImgOverlay>
-                    <Card.Title style={cardTitle} className="text-center">Recent Matches</Card.Title>
+                    <Card.Title style={cardTitle} className="text-center">Valorant Tracker</Card.Title>
                     <Card.Text className="text-center">
-                        Search your recent 5 matches by typing your Username and RIOT Tag below
+                        Enter Username#0000 to display stats.
                     </Card.Text>
                     <form>
                         <fieldset className="text-center">
@@ -76,10 +75,7 @@ export const Homepage = () => {
                                 placeholder="Username"
                                 value={username}
                                 onChange={handleUsername} />
-                            <input
-                                placeholder="#"
-                                value={username}
-                                onChange={handleUsername} />
+                     
                             <input
                                 value={tags}
                                 placeholder="#0000"
