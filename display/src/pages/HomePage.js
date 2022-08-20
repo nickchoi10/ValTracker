@@ -2,8 +2,6 @@ import {Card} from 'react-bootstrap';
 import { useState } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import HenrikDevValorantAPI from 'unofficial-valorant-api';
-import {useDispatch} from "react-redux";
-import {setAPI} from "../reducers/playersReducer";
 import './css/homepage.css'
 
 
@@ -29,14 +27,14 @@ export const Homepage = () => {
     //Grabs the data from the form
     const [username, setUsername] = useState('')
     const [tags, setTags] = useState('');
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const navigate = useNavigate();
 
     const handleAPI = async (e) => {
         e.preventDefault()
         console.warn({username, tags})
         const version = "v1"
-        const region = "eu"
+        const region = "na"
         const name = `${username}`
         const tag = `${tags}`
         const filter = 'competitive'
@@ -52,7 +50,7 @@ export const Homepage = () => {
 
         const results = await Promise.all([fetchUsersData, fetchUsersMMR, fetchMatches]);
         console.log(`RECEIVED THE FOLLOWING PROMISE:`, results)
-        dispatch(setAPI(results));
+        // dispatch(setAPI(results));
         navigate('/recent_matches')
     }
 
@@ -79,8 +77,12 @@ export const Homepage = () => {
                                 value={username}
                                 onChange={handleUsername} />
                             <input
+                                placeholder="#"
+                                value={username}
+                                onChange={handleUsername} />
+                            <input
                                 value={tags}
-                                placeholder="RIOT TAG NO #"
+                                placeholder="#0000"
                                 onChange={handleTags} />
                             <button onClick={handleAPI}>Search</button>
                         </fieldset>
