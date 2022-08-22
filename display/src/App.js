@@ -1,21 +1,22 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-// import {Lineups} from "./pages/Lineups"
-import {VNavbar} from './components/navbar/VNavbar'
-import {Homepage} from './pages/HomePage'
-// import CrossHairs from "./pages/CrossHairs"
-// import RecentMatches from './pages/RecentMatches'
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./lib/UserContext";
+import ProfilePage from "./pages/ProfilePage";
+import SearchPage from "./pages/SearchPage";
 
 
-
-const App = () => {
-  return (
-    <Router>
-      <VNavbar/>
-      <Routes>
-        <Route path='/' exact element={<Homepage/>}/>
-      </Routes>
-    </Router>
-  );
+function App() {
+	return (
+		<UserProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<SearchPage />} />
+					<Route path="/Profile" exact element={<ProfilePage />} />
+				</Routes>
+			</BrowserRouter>
+		</UserProvider>
+	);
 }
- 
+
 export default App;
+
+

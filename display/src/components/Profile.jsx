@@ -1,7 +1,6 @@
 import { React, useContext} from 'react';
 import {Heading,Flex,Text,Image,useColorModeValue,SkeletonCircle,Skeleton} from '@chakra-ui/react';
 import { UserContext } from '../lib/UserContext';
-import { MdEditLocation, MdMeetingRoom, MdRMobiledata } from 'react-icons/md';
 
 export default function Profile() {
   const bg = useColorModeValue('#FFFFFF', '#121212');

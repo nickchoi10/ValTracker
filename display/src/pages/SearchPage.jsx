@@ -1,17 +1,10 @@
 import { React, useRef, useContext} from 'react';
-import {
-  Flex,
-  Heading,
-  Input,
-  Button,
-} from '@chakra-ui/react';
+import {Flex,Heading,Input,Button} from '@chakra-ui/react';
 import { UserContext } from '../lib/UserContext';
 import { MdArrowForward } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import wallpaper from '../assets/wallapaper2.jpg';
 import Navbar from '../components/NavBar';
-
-
 
 export default function SearchPage() {
   let navigate = useNavigate();
@@ -32,9 +25,6 @@ export default function SearchPage() {
     navigate('/Profile');
   }
 
-
-
-  
   return (
     <Flex>
       <Navbar />
@@ -85,7 +75,6 @@ export default function SearchPage() {
                 _placeholder={{ color: '#535353' }}
               ></Input>
 
-
               <Input
                 ref={tagTemp}
                 borderRadius="7px"
@@ -110,7 +99,6 @@ export default function SearchPage() {
               >
                 <MdArrowForward size="30px" />
               </Button>
-
 
             </Flex>
         </Flex>
