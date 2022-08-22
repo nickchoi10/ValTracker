@@ -36,6 +36,9 @@ export default function RankStats() {
                     <Text color="#46B8A3" as="i">
                       Current RR: {mmr.ranking_in_tier}
                     </Text>
+                    <Text color="#46B8A3" as="i">
+                      RR Required for Rank Up: {100-mmr.ranking_in_tier}
+                    </Text>
             </Flex>
 
             <Image
